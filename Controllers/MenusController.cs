@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using Cinema.Data;
 using Microsoft.EntityFrameworkCore;
+using Cinema.Data;
+using Cinema.Models;
 
 namespace Cinema.Controllers {
     public class MenusController : Controller 
@@ -20,6 +21,19 @@ namespace Cinema.Controllers {
         public async Task<IActionResult> Details(int id)
         {
             return View(await _context.Menus.FirstOrDefaultAsync(m => m.Id == id));
+        }
+
+        public async Task<IActionResult> Edit(int id)
+        {
+            return View(await _context.Menus.FirstOrDefaultAsync(m => m.Id == id));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(Menu menu)
+        {
+            _context.Menus.Update(menu);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
         }
     }
 }

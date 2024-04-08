@@ -1,4 +1,4 @@
-# Cinema 🎬 (MVC)
+# Cinema 🎬
 
 ### CRUD basado en un Cine en ASP.NET haciendo uso de MVC (Modelo Vista Controlador)
 
