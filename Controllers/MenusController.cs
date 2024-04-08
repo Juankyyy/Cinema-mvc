@@ -20,12 +20,12 @@ namespace Cinema.Controllers {
 
         public async Task<IActionResult> Details(int id)
         {
-            return View(await _context.Menus.FirstOrDefaultAsync(m => m.Id == id));
+            return View(await _context.Menus.FindAsync(id));
         }
 
         public async Task<IActionResult> Edit(int id)
         {
-            return View(await _context.Menus.FirstOrDefaultAsync(m => m.Id == id));
+            return View(await _context.Menus.FindAsync(id));
         }
 
         [HttpPost]
@@ -35,5 +35,14 @@ namespace Cinema.Controllers {
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
-    }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var menu = await _context.Menus.FindAsync(id);
+
+            _context.Menus.Remove(menu);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+    } 
 }

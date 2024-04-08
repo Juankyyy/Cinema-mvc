@@ -30,6 +30,9 @@ VALUES ("Combo Clásico", "https://scorecoorp.procinal.com/SCOREIMG/imgpel/test/
 ("Botella de Agua", "https://scorecoorp.procinal.com/SCOREIMG/imgpel/test/170.jpg", "Manantial 600ml", 7200, "Bebidas"),
 ("Chocolatina", "https://scorecoorp.procinal.com/SCOREIMG/imgpel/test/416.jpg", "Jet 30 Grs", 4900, "Snack")
 
+INSERT INTO Menus (Name, Image, Description, Price, Category)
+VALUES ("Chocolatina", "https://scorecoorp.procinal.com/SCOREIMG/imgpel/test/416.jpg", "Jet 30 Grs", 4900, "Snack")
+
 INSERT INTO Movies (Name, Image, Sinopsis, Rating, Duration, Category, ReleaseDate)
 VALUES ("Gigantes de Acero", "https://i.postimg.cc/KzbzFZv8/real-steel-international-poster.jpg", "Un promotor de boxeo y su hijo se unen de mala gana para construir y entrenar a un robot peleador que pelee por el campeonato.", "4.5", "2h 7m", "Ciencia Ficción", "2011"),
 ("Resident Evil 1", "https://i.postimg.cc/KjqvnB71/435760.jpg", "Tras la fuga de un virus, una inteligencia artificial cierra un laboratorio científico secreto, obligando a un grupo de militares a luchar contra mortíferos zombis para poder escapar.", "4.0", "1h 40m", "Terror", "2002"),
