@@ -1,4 +1,6 @@
-CREATE TABLE Menu (
+DROP TABLE Menu;
+
+CREATE TABLE Menus (
     Id INT PRIMARY KEY AUTO_INCREMENT,
     Name VARCHAR(100) UNIQUE NOT NULL,
     Image VARCHAR(255) UNIQUE NOT NULL,
@@ -18,10 +20,10 @@ CREATE TABLE Movies (
     ReleaseDate VARCHAR(50) NOT NULL
 );
 
-SELECT * FROM Menu;
+SELECT * FROM Menus;
 SELECT * FROM Movies;
 
-INSERT INTO Menu (Name, Image, Description, Price, Category)
+INSERT INTO Menus (Name, Image, Description, Price, Category)
 VALUES ("Combo Clásico", "https://scorecoorp.procinal.com/SCOREIMG/imgpel/test/1581.jpg", "1 Crispeta de 80 Oz, 1 Bebida", 25900, "Combos"),
 ("Combo Para Mí", "https://scorecoorp.procinal.com/SCOREIMG/imgpel/test/1580.jpg", "1 Perro o 1 Sánduche, 1 Crispeta de 80 Oz, 1 Bebida", 33900, "Combos"),
 ("Combo Deluxe", "https://scorecoorp.procinal.com/SCOREIMG/imgpel/test/1582.jpg", "1 Crispeta de 200 Oz, Nachos con queso y guacamole, 1 Perro o 1 Sánduche, 1 Choco jumbito 40gr, 2 Bebidas", 61900, "Combos"),
