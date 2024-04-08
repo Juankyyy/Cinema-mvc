@@ -44,5 +44,18 @@ namespace Cinema.Controllers {
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(Menu menu)
+        {
+            _context.Menus.Add(menu);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
     } 
 }

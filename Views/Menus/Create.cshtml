@@ -1,0 +1,42 @@
+@model Menu
+@{
+    ViewBag.Title = "Menu Create";
+    ViewBag.Favicon = "create.svg";
+}
+
+<form class="content contentEdit" method="post" asp-action="Create">
+    <h3>Create new Menu</h3>
+
+    <div class="info">
+        <div class="header-info header-info-edit">
+            <div class="inputEdit">
+                <p>Name: </p>
+                <input class="form-control" type="text" asp-for="Name">
+            </div>
+
+            <div class="inputEdit">
+                <p>Price: $</p>
+                <input class="form-control" type="number" asp-for="Price">
+            </div>
+
+            <div class="inputEdit">
+                <p>Category: </p>
+                <input class="form-control" type="text" asp-for="Category">
+            </div>
+        </div>
+
+        <div class="body-info">
+            <div class="inputEdit">
+                <p>Description: </p>
+                <input class="form-control" type="text" asp-for="Description">
+            </div>
+        </div>
+    </div>
+
+    <div class="inputEdit inputUrl">
+        <p>Image Url: </p>
+        <input class="form-control" type="text" asp-for="Image">
+    </div>
+
+    <button class="btn btn-success">Create</button>
+</form>
