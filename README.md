@@ -1,6 +1,6 @@
 # Cinema 🎬 (MVC)
 
-### CRUD en ASP.NET con el patrón de diseño MVC (Modelo Vista Controlador)
+### CRUD basado en un Cine en ASP.NET haciendo uso de MVC (Modelo Vista Controlador)
 
 ## Iniciar Proyecto 🛠️
 
