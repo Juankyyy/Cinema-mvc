@@ -3,3 +3,36 @@
     ViewBag.Favicon = "menu.svg";
 }
 
+<div class="container-fluid">
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var menu in Model)
+            {
+                <tr>
+                    <th>@menu.Id</th>
+                    <td>@menu.Name</td>
+                    <td><img src="@menu.Image" width="150px" alt=""></td>
+                    <td class="tdDescription">@menu.Description</td>
+                    <td><strong>$ </strong>@menu.Price</td>
+                    <td>@menu.Category</td>
+                    <td>
+                        <a class="btn btn-sm btn-info" asp-controller="Menus" asp-action="Details" asp-route-id="@menu.Id">Details</a>
+                        <a class="btn btn-sm btn-warning" asp-controller="Menus" asp-action="Edit" asp-route-id="@menu.Id">Edit</a>
+                        <a class="btn btn-sm btn-danger" asp-controller="Menus" asp-action="Delete" asp-route-id="@menu.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
