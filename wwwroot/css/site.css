@@ -1,52 +1,92 @@
+@font-face {
+    font-family: 'Nunito Sans Variable';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 200 1000;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/nunito-sans:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 * {
-  padding: 0px;
-  margin: 0px;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Nunito Sans Variable';
 }
 
 body {
-  background-color: #212529;
+    background-color: #212529;
+    color: #fff;
 }
 
 nav {
-  border-bottom: 1px solid #444;
+    border-bottom: 1px solid #444;
 }
 
 .content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 65px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 65px);
 }
 
 /* Landing */
 .bg {
-  position: relative;
-  height: calc(100vh - 56px);
+    position: relative;
+    height: calc(100vh - 56px);
 }
 
 .bg::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url(https://i.postimg.cc/sfHJcQDB/AAAAQV3-Q-j9k85g-REY9y4-TWBc-Bml5acb-Uo1-R7-Hy95-OK54-Ha-DGw-WQ2-Ukip-Vfrs4y-FSQki3-Fu-Gba-VZx-Lrf-b0kpu-RF80h-Mb-LZj-LXS.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: brightness(0.5);
-  z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://i.postimg.cc/sfHJcQDB/AAAAQV3-Q-j9k85g-REY9y4-TWBc-Bml5acb-Uo1-R7-Hy95-OK54-Ha-DGw-WQ2-Ukip-Vfrs4y-FSQki3-Fu-Gba-VZx-Lrf-b0kpu-RF80h-Mb-LZj-LXS.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0.5);
+    z-index: -1;
 }
 
 .contentLanding {
-  flex-direction: column;
+    flex-direction: column;
 }
 
 .tdDescription {
-  max-width: 333px;
+    max-width: 333px;
 }
 
 td img {
-  border-radius: 7px;
+    border-radius: 7px;
+}
+
+.contentDetails {
+    flex-direction: column;
+
+    p {
+        background-color: #00000050;
+        padding: 10px;
+        border-radius: 5px;
+
+        img {
+            border-radius: 10px;
+        }
+    }
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.header-info {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    p {
+        margin: 0px;
+    }
 }

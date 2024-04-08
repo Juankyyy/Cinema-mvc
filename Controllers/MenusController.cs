@@ -16,5 +16,10 @@ namespace Cinema.Controllers {
         {
             return View(await _context.Menus.ToListAsync());
         }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            return View(await _context.Menus.FirstOrDefaultAsync(m => m.Id == id));
+        }
     }
 }

@@ -1,0 +1,26 @@
+@model Menu
+@{
+    ViewBag.Title = "Menu Details";
+    ViewBag.Favicon = "details.svg";
+}
+
+<div class="content contentDetails">
+    <h3><strong>Menu ID: </strong>@Model.Id</h3>
+
+    <div class="info">
+        <div class="header-info">
+            <p><strong>Name: </strong>@Model.Name</p>
+            <p><strong>Price: $ </strong>@Model.Price</p>
+            <p><strong>Category: </strong>@Model.Category</p>
+        </div>
+
+        <div class="body-info">
+            <p><strong>Description: </strong>@Model.Description</p>
+        </div>
+    </div>
+    
+    <p><strong>Image: </strong><img src="@Model.Image" width="200px"></p>
+    <p><strong>Image Url: </strong>@Model.Image</p>
+
+    <a class="btn btn-primary" asp-controller="Menus" asp-action="Index">Volver</a>
+</div>
