@@ -1,22 +1,43 @@
-html {
-  font-size: 14px;
+* {
+  padding: 0px;
+  margin: 0px;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 65px);
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
+/* Landing */
+.bg {
   position: relative;
-  min-height: 100%;
+  height: calc(100vh - 56px);
 }
 
-body {
-  margin-bottom: 60px;
+.bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://i.postimg.cc/sfHJcQDB/AAAAQV3-Q-j9k85g-REY9y4-TWBc-Bml5acb-Uo1-R7-Hy95-OK54-Ha-DGw-WQ2-Ukip-Vfrs4y-FSQki3-Fu-Gba-VZx-Lrf-b0kpu-RF80h-Mb-LZj-LXS.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(0.5);
+  z-index: -1;
+}
+
+.contentLanding {
+  flex-direction: column;
+}
+
+.title {
+  color: #fff;
+  /* background-color: #000000b0; */
+  padding: 5px;
+  border-radius: 10px;
 }
