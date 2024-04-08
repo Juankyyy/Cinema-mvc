@@ -62,6 +62,50 @@ td img {
     border-radius: 7px;
 }
 
+/* Index */
+.menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search {
+    background-color: #333;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: min-content;
+    border-radius: 20px;
+    padding: 5px 10px;
+    border: 2px solid #444;
+    
+    input {
+        background-color: #333;
+        border: none;
+        color: #fff;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #009edd;
+        padding: 2px 8px;
+        padding-left: 10px;
+        border-radius: 20px;
+        border: none;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #007add;
+    }
+}
+
 /* Details */
 .contentDetails {
     flex-direction: column;

@@ -4,6 +4,15 @@
 }
 
 <div class="container-fluid">
+    <div class="menu mt-3">
+        <form class="search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><g fill="none"><path fill="#ffffff" d="M19 11a8 8 0 1 1-16 0a8 8 0 0 1 16 0" opacity=".16"/><path stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314"/></g></svg>
+            <input type="text" placeholder="Search">
+            <button><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#ffffff" d="M3 20v-6l8-2l-8-2V4l19 8z"/></svg></button>
+        </form>
+    <a class="btn btn-success" asp-controller="Menus" asp-action="Create">Create new menu</a>
+    </div>
+
     <table class="table table-dark table-striped">
         <thead>
             <tr>
