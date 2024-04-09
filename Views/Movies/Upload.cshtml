@@ -1,12 +1,12 @@
 @model Movie
 @{
-    ViewBag.Title = "Movie Create";
+    ViewBag.Title = "Movie Upload";
     ViewBag.Favicon = "create.svg";
 }
 
-<form class="content contentEdit" method="post" asp-action="Create">
+<form class="content contentEdit" method="post" asp-action="Upload" enctype="multipart/form-data">
     <h3>Create new Movie</h3>
-    <a class="btn btn-sm btn-success" asp-action="Upload">Upload</a>
+    <a class="btn btn-sm btn-success" asp-action="Create">Url</a>
 
     <div class="info">
         <div class="header-info header-info-edit">
@@ -44,12 +44,25 @@
                 <input class="form-control" type="text" asp-for="Sinopsis">
             </div>
         </div>
+
+        <div class="inputFiles">
+            <div class="inputEdit">
+                <label for="path">Path: </label>
+                <select class="form-control" name="path">
+                    <option value="0">Images</option>
+                    <option value="1">Documents</option>
+                    @* <option value="2">Downloads</option> *@
+                </select>
+
+            </div>
+            
+            <div class="inputEdit">
+                <label for="image">Image:</label>
+                <input class="form-control" type="file" name="file" >
+            </div>
+        </div>
     </div>
 
-    <div class="inputEdit inputUrl">
-        <p>Image Url: </p>
-        <input class="form-control" type="text" asp-for="Image">
-    </div>
 
     <button class="btn btn-warning">Create</button>
 </form>

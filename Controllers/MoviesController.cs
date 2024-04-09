@@ -3,15 +3,21 @@ using Microsoft.EntityFrameworkCore;
 using Cinema.Data;
 using Cinema.Models;
 
+using Cinema.Helpers;
+using Cinema.Providers;
+using Microsoft.AspNetCore.Http;
+
 namespace Cinema.Controllers
 {
     public class MoviesController : Controller
     {
         public readonly CinemaContext _context;
+        private readonly HelperUploadFiles helperUploadFiles;
 
-        public MoviesController(CinemaContext context)
+        public MoviesController(CinemaContext context, HelperUploadFiles helperUpload)
         {
             _context = context;
+            this.helperUploadFiles = helperUpload;
         }
 
         public async Task<IActionResult> Index()
@@ -67,6 +73,38 @@ namespace Cinema.Controllers
             }
 
             return View("Index", movies.ToList());
+        }
+
+        public IActionResult Upload()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Upload(Movie movie, IFormFile file, int path)
+        {
+            string nameFile = file.FileName;
+            string pathFile = "";
+
+            switch(path)
+            {
+                case 0:
+                    pathFile = await this.helperUploadFiles.UploadFilesAsync(file, nameFile, Folders.Images);
+                    break;
+                
+                case 1:
+                    pathFile = await this.helperUploadFiles.UploadFilesAsync(file, nameFile, Folders.Documents);
+                    break;
+                
+                // case 2:
+                //     pathFile = await this.helperUploadFiles.UploadFilesAsync(file, nameFile, Folders.Downloads);
+                //     break;
+            }
+
+            movie.Image = pathFile;
+            _context.Movies.Add(movie);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
         }
     }
 }

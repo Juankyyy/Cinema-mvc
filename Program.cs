@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Cinema.Data;
+using Cinema.Providers;
+using Cinema.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
@@ -10,6 +12,9 @@ builder.Services.AddDbContext<CinemaContext> (options =>
         Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.20-mysql")
     )
 );
+
+builder.Services.AddSingleton<PathProvider>();
+builder.Services.AddSingleton<HelperUploadFiles>();
 
 var app = builder.Build();
 
