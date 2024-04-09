@@ -101,7 +101,7 @@ namespace Cinema.Controllers
                 //     break;
             }
 
-            movie.Image = pathFile;
+            movie.Image = nameFile;
             _context.Movies.Add(movie);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
