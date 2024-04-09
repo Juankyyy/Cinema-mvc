@@ -57,5 +57,17 @@ namespace Cinema.Controllers {
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+
+        public IActionResult Search(string search)
+        {
+            var menus = _context.Menus.AsQueryable();
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                menus = menus.Where(m => m.Name.Contains(search));
+            }
+
+            return View("Index", menus.ToList());
+        }
     } 
 }
