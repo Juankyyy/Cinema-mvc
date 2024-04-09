@@ -6,6 +6,7 @@ using Cinema.Models;
 using Cinema.Helpers;
 using Cinema.Providers;
 using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace Cinema.Controllers
 {
@@ -103,6 +104,17 @@ namespace Cinema.Controllers
 
             movie.Image = nameFile;
             _context.Movies.Add(movie);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> DeleteUpload(int id, Movie movie)
+        {
+            var movies = await _context.Movies.FindAsync(id);
+            var moviePath = $"wwwroot/images/{movies.Image}";
+            System.IO.File.Delete(moviePath);
+
+            _context.Movies.Remove(movie);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
