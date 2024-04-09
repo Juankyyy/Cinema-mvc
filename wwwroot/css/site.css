@@ -136,6 +136,14 @@ td img {
     }
 }
 
+.body-info {
+    max-width: 1000px;
+
+    p {
+        text-wrap: pretty;
+    }
+}
+
 /* Edit */
 .header-info-edit input {
     width: 77%;
@@ -174,5 +182,19 @@ td img {
 
     input {
         width: 90%;
+    }
+}
+
+.inputs-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    .inputEdit {
+        width: 437px;
+
+        input {
+            width: 73%;
+        }
     }
 }

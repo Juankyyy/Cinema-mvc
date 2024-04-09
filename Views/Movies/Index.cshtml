@@ -1,6 +1,6 @@
 @{
-    ViewBag.Title = "Menus";
-    ViewBag.Favicon = "menu.svg";
+    ViewBag.Title = "Movies";
+    ViewBag.Favicon = "movies.svg";
 }
 
 <div class="container-fluid">
@@ -10,7 +10,7 @@
             <input type="text" name="search" placeholder="Search">
             <button><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#ffffff" d="M3 20v-6l8-2l-8-2V4l19 8z"/></svg></button>
         </form>
-    <a class="btn btn-success" asp-action="Create">Create new menu</a>
+    <a class="btn btn-success" asp-action="Create">Create new movie</a>
     </div>
 
     <table class="table table-dark table-striped">
@@ -19,26 +19,30 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Image</th>
-                <th>Description</th>
-                <th>Price</th>
+                <th>Sinopsis</th>
+                <th>Rating</th>
+                <th>Duration</th>
                 <th>Category</th>
+                <th>Release Date</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var menu in Model)
+            @foreach (var movie in Model)
             {
                 <tr>
-                    <th>@menu.Id</th>
-                    <td>@menu.Name</td>
-                    <td><img src="@menu.Image" width="150px" alt="@menu.Name Image"></td>
-                    <td class="tdDescription">@menu.Description</td>
-                    <td><strong>$ </strong>@menu.Price</td>
-                    <td>@menu.Category</td>
+                    <th>@movie.Id</th>
+                    <td>@movie.Name</td>
+                    <td><img src="@movie.Image" width="150px" alt="@movie.Name Image"></td>
+                    <td class="tdDescription">@movie.Sinopsis</td>
+                    <td>@movie.Rating</td>
+                    <td>@movie.Duration</td>
+                    <td>@movie.Category</td>
+                    <td>@movie.ReleaseDate</td>
                     <td>
-                        <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@menu.Id">Details</a>
-                        <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@menu.Id">Edit</a>
-                        <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@menu.Id">Delete</a>
+                        <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@movie.Id">Details</a>
+                        <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@movie.Id">Edit</a>
+                        <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@movie.Id">Delete</a>
                     </td>
                 </tr>
             }

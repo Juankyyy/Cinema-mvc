@@ -1,26 +1,28 @@
-@model Menu
+@model Movie
 @{
-    ViewBag.Title = "Menu Details";
+    ViewBag.Title = "Movie Details";
     ViewBag.Favicon = "details.svg";
 }
 
 <div class="content contentDetails">
-    <h3><strong>Menu ID: </strong>@Model.Id</h3>
+    <h3><strong>Movie ID: </strong>@Model.Id</h3>
 
     <div class="info">
         <div class="header-info">
             <p><strong>Name: </strong>@Model.Name</p>
-            <p><strong>Price: $ </strong>@Model.Price</p>
+            <p><strong>Rating: </strong>@Model.Rating</p>
             <p><strong>Category: </strong>@Model.Category</p>
+            <p><strong>Duration: </strong>@Model.Duration</p>
+            <p><strong>Release Date: </strong>@Model.ReleaseDate</p>
         </div>
 
         <div class="body-info">
-            <p><strong>Description: </strong>@Model.Description</p>
+            <p><strong>Sinopsis: </strong>@Model.Sinopsis</p>
         </div>
     </div>
     
     <p><strong>Image Url: </strong>@Model.Image</p>
     <p><img src="@Model.Image" alt="@Model.Name Image" width="200px"></p>
 
-    <a class="btn btn-primary" asp-controller="Menus" asp-action="Index">Volver</a>
+    <a class="btn btn-primary"asp-action="Index">Volver</a>
 </div>

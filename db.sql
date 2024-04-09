@@ -1,4 +1,4 @@
-DROP TABLE Menu;
+DROP TABLE Movies;
 
 CREATE TABLE Menus (
     Id INT PRIMARY KEY AUTO_INCREMENT,
@@ -17,7 +17,7 @@ CREATE TABLE Movies (
     Rating VARCHAR(50) NOT NULL,
     Duration VARCHAR(50) NOT NULL,
     Category VARCHAR(100) NOT NULL,
-    ReleaseDate VARCHAR(50) NOT NULL
+    ReleaseDate INT NOT NULL
 );
 
 SELECT * FROM Menus;

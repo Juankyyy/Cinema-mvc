@@ -1,11 +1,11 @@
-@model Menu
+@model Movie
 @{
-    ViewBag.Title = "Menu Edit";
+    ViewBag.Title = "Movie Edit";
     ViewBag.Favicon = "edit.svg";
 }
 
 <form class="content contentEdit" method="post">
-    <h3><strong>Menu ID: </strong>@Model.Id</h3>
+    <h3><strong>Movie ID: </strong>@Model.Id</h3>
 
     <div class="info">
         <div class="header-info header-info-edit">
@@ -15,20 +15,32 @@
             </div>
 
             <div class="inputEdit">
-                <p>Price: $</p>
-                <input class="form-control" type="number" asp-for="Price">
+                <p>Rating: </p>
+                <input class="form-control" type="text" asp-for="Rating">
             </div>
 
             <div class="inputEdit">
-                <p>Category: </p>
-                <input class="form-control" type="text" asp-for="Category">
+                <p>Duration: </p>
+                <input class="form-control" type="text" asp-for="Duration">
             </div>
         </div>
 
         <div class="body-info">
+            <div class="inputs-info">
+                <div class="inputEdit">
+                    <p>Category: </p>
+                    <input class="form-control" type="text" asp-for="Category">
+                </div>
+
+                <div class="inputEdit">
+                    <p>Release Date: </p>
+                    <input class="form-control" type="number" asp-for="ReleaseDate">
+                </div>
+            </div>
+
             <div class="inputEdit">
-                <p>Description: </p>
-                <input class="form-control" type="text" asp-for="Description">
+                <p>Sinopsis: </p>
+                <input class="form-control" type="text" asp-for="Sinopsis">
             </div>
         </div>
     </div>

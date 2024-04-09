@@ -11,5 +11,6 @@ namespace Cinema.Data
         }
 
         public DbSet<Menu> Menus { get; set; }
+        public DbSet<Movie> Movies  { get; set; }
     }
 }
